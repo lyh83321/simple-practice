@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,17 @@ public class Controller {
 	@RequestMapping("/demo/query/{bankId}")
 	public ResponseEntity<BankAccountDemo> getBank(@PathVariable Integer bankId) {
 		BankAccountDemo bank = bankAccountDemoService.getBankAccountById(bankId);
+
+        if (bank != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(bank);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+	
+	@RequestMapping("/demo/query/2")
+	public ResponseEntity<List<com.example.demo.mapping.hibernate.BankAccountDemo>> readAll() {
+		List<com.example.demo.mapping.hibernate.BankAccountDemo> bank = bankAccountDemoService.readAll();
 
         if (bank != null) {
             return ResponseEntity.status(HttpStatus.OK).body(bank);

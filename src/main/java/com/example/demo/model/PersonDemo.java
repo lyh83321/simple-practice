@@ -1,12 +1,9 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 import oracle.sql.DATE;
 
-@Entity
-@Table(name="PERSON_DEMO")
+//@Entity
+//@Table(name="PERSON_DEMO")
 public class PersonDemo {
 
 	private int id;

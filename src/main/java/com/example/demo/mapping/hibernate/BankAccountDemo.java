@@ -1,31 +1,55 @@
-package com.example.demo.model;
+package com.example.demo.mapping.hibernate;
 
+import java.io.Serializable;
+import java.sql.Timestamp;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import oracle.sql.DATE;
 
-//@Entity
-//@Table(name="BANKACCOUNT_DEMO")
-public class BankAccountDemo {
+@Entity
+@Table(name="BANKACCOUNT_DEMO")
+public class BankAccountDemo implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "id")
 	private int id;
 	
+	@Column(name = "identity_id")
 	private String identity_id;
 	
+	@Column(name = "BANK_NO")
 	private int BANK_NO;
 	
+	@Column(name = "BANK_CODE")
 	private int BANK_CODE;
 	
-	private DATE create_time;
+	@Column(name = "create_time")
+	private Timestamp create_time;
 	
+	@Column(name = "create_user")
 	private String create_user;
 	
-	private DATE update_time;
+	@Column(name = "update_time")
+	private Timestamp update_time;
 	
+	@Column(name = "update_user")
 	private String update_user;
 	
+	@Column(name = "Activity")
 	private String Activity;
 	
+	@Column(name = "Amount")
 	private double Amount;
 	
+	@Column(name = "PASSWORD")
 	private String PASSWORD;
 
 	public int getId() {
@@ -60,11 +84,11 @@ public class BankAccountDemo {
 		BANK_CODE = bANK_CODE;
 	}
 
-	public DATE getCreate_time() {
+	public Timestamp getCreate_time() {
 		return create_time;
 	}
 
-	public void setCreate_time(DATE create_time) {
+	public void setCreate_time(Timestamp create_time) {
 		this.create_time = create_time;
 	}
 
@@ -76,11 +100,11 @@ public class BankAccountDemo {
 		this.create_user = create_user;
 	}
 
-	public DATE getUpdate_time() {
+	public Timestamp getUpdate_time() {
 		return update_time;
 	}
 
-	public void setUpdate_time(DATE update_time) {
+	public void setUpdate_time(Timestamp update_time) {
 		this.update_time = update_time;
 	}
 
@@ -107,17 +131,12 @@ public class BankAccountDemo {
 	public void setAmount(double amount) {
 		Amount = amount;
 	}
-	
+
 	public String getPASSWORD() {
 		return PASSWORD;
 	}
 
 	public void setPASSWORD(String pASSWORD) {
 		PASSWORD = pASSWORD;
-	}
-
-	@Override
-	public String toString() {
-		return identity_id;
 	}
 }

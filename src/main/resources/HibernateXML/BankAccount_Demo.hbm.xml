@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- class name is the fully qualified name of the POJO class -->
+	<!-- table is the name of the database table which represents the Student -->
+	<class name="com.example.demo.mapping.hibernate.BankAccountDemo" table="BANKACCOUNT_DEMO">
+		<!-- Attribute id is mapped to the column id -->
+		<id name="id" type="integer">
+			<column name="id" />
+		</id>
+
+		<!-- Attribute name is mapped to the column identity_id -->
+		<property name="identity_id" type="string">
+			<column name="identity_id" length="10" not-null="true" />
+		</property>
+
+		<!-- Attribute age is mapped to the column "BANK_NO" -->
+		<property name="BANK_NO" type="integer">
+			<column name="BANK_NO" length="20" not-null="true" />
+		</property>
+		
+		<!-- Attribute age is mapped to the column "BANK_CODE" -->
+		<property name="BANK_CODE" type="integer">
+			<column name="BANK_CODE" length="10" not-null="true" />
+		</property>
+		
+		<!-- Attribute age is mapped to the column "create_time" -->
+		<property name="create_time" type="timestamp">
+			<column name="create_time" length="6" not-null="true" />
+		</property>
+		
+		<!-- Attribute age is mapped to the column "create_user" -->
+		<property name="create_user" type="string">
+			<column name="create_user" length="10" not-null="true" />
+		</property>
+		
+		<!-- Attribute age is mapped to the column "update_time" -->
+		<property name="update_time" type="timestamp">
+			<column name="update_time" length="20" not-null="true" />
+		</property>
+		
+		<!-- Attribute age is mapped to the column "update_user" -->
+		<property name="update_user" type="string">
+			<column name="update_user" length="20" not-null="true" />
+		</property>
+		
+		<!-- Attribute age is mapped to the column "Activity" -->
+		<property name="Activity" type="string">
+			<column name="Activity" length="1" not-null="true" />
+		</property>
+		
+		<!-- Attribute age is mapped to the column "Amount" -->
+		<property name="Amount" type="double">
+			<column name="Amount" length="38" not-null="true" />
+		</property>
+		
+		<!-- Attribute age is mapped to the column "Amount" -->
+		<property name="PASSWORD" type="string">
+			<column name="PASSWORD" length="10" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

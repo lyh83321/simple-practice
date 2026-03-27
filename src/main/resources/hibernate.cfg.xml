@@ -18,9 +18,9 @@
         <!-- 資料庫密碼 --> 
         <property name="hibernate.connection.password">0000</property> 
         
-        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
 
-        <!-- 物件與資料庫表格映射文件 
-        <mapping resource="onlyfun/caterpillar/User.hbm.xml"/> --> 
+        <!-- 物件與資料庫表格映射文件
+        <mapping class="com.example.demo.mapping.hibernate.BankAccountDemo" resource="resources/HibernateXML/BankAccount_Demo.hbm.xml"/> --> 
     </session-factory> 
 </hibernate-configuration>
